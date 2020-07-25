@@ -1,0 +1,65 @@
+<mdb-navbar [SideClass]="color" [containerInside]="false">
+    <mdb-navbar-brand><a class="navbar-brand" routerLink="/">Sheila Crochet</a></mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto" (click)="currentPath()">
+        <li class="nav-item" [ngClass]="path == '/' ? 'active' : ''">
+          <a class="nav-link waves-light" routerLinkActive="active" mdbWavesEffect routerLink="/"><mdb-icon fas icon="home"></mdb-icon>Inicio</a>
+        </li>
+        <li class="nav-item" [ngClass]="path == '/quien-soy' ? 'active' : ''">
+          <a class="nav-link waves-light" routerLinkActive="active" mdbWavesEffect routerLink="/quien-soy"><mdb-icon far icon="grin-stars"></mdb-icon>¿Quién soy?</a>
+        </li>
+        <li class="nav-item" [ngClass]="path == '/shop' ? 'active' : ''">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/shop"><mdb-icon fas icon="shopping-cart"></mdb-icon>Shop</a>
+        </li>
+  
+        <!-- Dropdown -->
+        <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            Basic dropdown<span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+            <div class="divider dropdown-divider"></div>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+          </div>
+        </li>
+  
+      </ul>
+      <!-- Links -->
+  
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="twitter"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="google-plus"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <div class="btn-group" mdbDropdown>
+              <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+              <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </links>
+    <!-- Collapsible content -->
+  </mdb-navbar>
+      <div class="md-form">
+          <input mdbInput type="text" id="form1" class="form-control" [(ngModel)]="colorUser" (blur)="changeColor()">
+          <label for="form1" class="">Color</label>
+          <a href="https://mdbootstrap.com/docs/angular/css/colors/" target="_blank" class=""><b>COLORES</b></a>
+      </div>
+<router-outlet></router-outlet>
