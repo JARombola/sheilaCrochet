@@ -11,6 +11,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ShopComponent } from './shop/shop.component';
 import { LayoutComponent } from './layout/layout.component';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     MainComponent,
     AboutMeComponent,
     ShopComponent,
-    LayoutComponent
+    LayoutComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

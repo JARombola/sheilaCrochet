@@ -1,156 +1,47 @@
-<div [@fadeInOnEnter]>
-    
-    <div class="card-deck mx-2 py-3">
-        <!-- Card -->
-        <mdb-card>
-          <div class="view overlay waves-light" mdbWavesEffect>
-            <!-- Card img -->
-            <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap"></mdb-card-img>
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!--Card content-->
-          <mdb-card-body>
-            <!--Title-->
-            <mdb-card-title>
-              <h4>Card Title</h4>
-            </mdb-card-title>
-      
-            <!--Text-->
-            <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </mdb-card-text>
-      
-            <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
-          </mdb-card-body>
-        </mdb-card>
-      
-        <!-- Card -->
-        <mdb-card>
-          <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-            <!-- Card img -->
-            <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg" alt="Card image cap"></mdb-card-img>
-            <a>
-              <div class="mask"></div>
-            </a>
-          </div>
-          <!--Card content-->
-          <mdb-card-body>
-            <!--Title-->
-            <mdb-card-title>
-              <h4>Card Title</h4>
-            </mdb-card-title>
-      
-            <!--Text-->
-            <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </mdb-card-text>
-      
-            <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
-          </mdb-card-body>
-        </mdb-card>
-      
-        <!-- Card -->
-        <mdb-card>
-          <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-            <!-- Card img -->
-            <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg" alt="Card image cap"></mdb-card-img>
-            <a>
-              <div class="mask"></div>
-            </a>
-          </div>
-          <!--Card content-->
-          <mdb-card-body>
-            <!--Title-->
-            <mdb-card-title>
-              <h4>Card Title</h4>
-            </mdb-card-title>
-      
-            <!--Text-->
-            <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </mdb-card-text>
-      
-            <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
-          </mdb-card-body>
-        </mdb-card>
+<div class="containerClass" [@fadeInOnEnter]>
+<div class="row mx-0">
+  <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" *ngFor = "let producto of productos">
+    <mdb-card class="my-3 cardDetalles" >
+      <div class="view overlay waves-light" mdbWavesEffect>
+        <mdb-card-img src="{{producto.urlImagen}}" alt="Card image cap"></mdb-card-img>
+        <a routerLink="/detalles">
+          <div class="mask rgba-white-slight"></div>
+        </a>
       </div>
-    <div class="card-deck mx-2 py-3">
-        <!-- Card -->
-        <mdb-card>
-          <div class="view overlay waves-light" mdbWavesEffect>
-            <!-- Card img -->
-            <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap"></mdb-card-img>
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <!--Card content-->
-          <mdb-card-body>
-            <!--Title-->
-            <mdb-card-title>
-              <h4>Card Title</h4>
-            </mdb-card-title>
-      
-            <!--Text-->
-            <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </mdb-card-text>
-      
-            <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
-          </mdb-card-body>
-        </mdb-card>
-      
-        <!-- Card -->
-        <mdb-card>
-          <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-            <!-- Card img -->
-            <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg" alt="Card image cap"></mdb-card-img>
-            <a>
-              <div class="mask"></div>
-            </a>
-          </div>
-          <!--Card content-->
-          <mdb-card-body>
-            <!--Title-->
-            <mdb-card-title>
-              <h4>Card Title</h4>
-            </mdb-card-title>
-      
-            <!--Text-->
-            <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </mdb-card-text>
-      
-            <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
-          </mdb-card-body>
-        </mdb-card>
-      
-        <!-- Card -->
-        <mdb-card>
-          <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-            <!-- Card img -->
-            <mdb-card-img src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg" alt="Card image cap"></mdb-card-img>
-            <a>
-              <div class="mask"></div>
-            </a>
-          </div>
-          <!--Card content-->
-          <mdb-card-body>
-            <!--Title-->
-            <mdb-card-title>
-              <h4>Card Title</h4>
-            </mdb-card-title>
-      
-            <!--Text-->
-            <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </mdb-card-text>
-      
-            <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
-          </mdb-card-body>
-        </mdb-card>
-      </div>
+      <mdb-card-body>
+        <mdb-card-title>
+          <h4>{{producto.nombre}}</h4>
+        </mdb-card-title>
+        
+        <mdb-card-text>
+          {{producto.descripcionCorta}} 
+        </mdb-card-text>
 
+      </mdb-card-body>
+      <a mdbBtn mdbWavesEffect color="primary" [routerLink]="['/producto', producto.id]"><mdb-icon fas icon="plus"></mdb-icon> Info </a>
+    </mdb-card>
+  </div>
 </div>
+</div>
+  <!-- <div class="card-deck mx-2 py-2">
+        <mdb-card *ngFor = "let producto of productos" class="my-3">
+          <div class="view overlay waves-light" mdbWavesEffect>
+            <mdb-card-img src="{{producto.urlImagen}}" alt="Card image cap"></mdb-card-img>
+            <a routerLink="/detalles">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h4>{{producto.nombre}}</h4>
+            </mdb-card-title>
+            
+            <mdb-card-text>
+              {{producto.descripcionCorta}} 
+            </mdb-card-text>
+
+              <a mdbBtn mdbWavesEffect color="primary" routerLink="/detalles">+ Info!</a>
+          </mdb-card-body>
+        </mdb-card>
+    </div>
+  </div> -->

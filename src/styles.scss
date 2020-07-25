@@ -3,7 +3,7 @@
 html {
     position: relative;
     min-height: 100%;
-    background-color: green;
+    background-color: pink;
     line-height: 1.5;
 }
 
@@ -19,4 +19,16 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.containerClass {
+    margin-top: 20px;
+}
+
+.cardDetalles .card {
+    box-shadow: unset !important;
+    height: 100%;
+}
+.cardDetalles .card .card-body a {
+    margin-top: auto;
 }

@@ -4,6 +4,7 @@ import { MainComponent } from './main/main.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ShopComponent } from './shop/shop.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,10 @@ const routes: Routes = [
       },
       {
         path: 'shop', component: ShopComponent
-      }
+      },
+      {
+        path: 'producto/:id', component: ProductDetailsComponent
+      },
     ]
   }
 ];
