@@ -1,49 +1,60 @@
-<div class="containerClass" [@fadeInOnEnter]>
+<div [@fadeInOnEnter]>
+    
+<div class="row no-gutters">
+  <div class="col-md-6" [@zoomInOnEnter]>
+    <div class="d-flex indigo-text lady-lips-gradient flex-column justify-content-center align-items-center h-100">
+      <h1>¡Bienvenida Crochetera!</h1>
+      <p class="my-2">
+        Te invito a formar parte del mundo <strong class="blue-text titulo font-weight-bold">Algo de Mí!</strong>
+      </p> 
+        <p class="px-2 mt-4">
+        Para que tejamos juntas y compartamos esta bella pasión por el crochet.
+      </p>
+    </div>
 
-    <mdb-card class="mx-md-3">
-      
-    <div id="imagenPrincipal" class="blue-gradient text-white text-center py-5 px-4">
-      <div class="py-5">
-        <h1 class="card-title my-3 py-2">¡Bienvenida Crochetera! </h1>
-        <p class="mb-1 px-md-5 mx-md-5">
-          Te invito a formar parte del mundo <strong class="cyan-text titulo">Algo de Mí!</strong>
-        </p> 
-          <p style="margin-top: 0px;">
-          Para que tejamos juntas y compartamos esta bella pasión por el crochet.
-        </p>
+  </div>
+  <div class="col-md-6" [@fadeInRightOnEnter]>
+
+    <div class="view">
+      <img src="/assets/adm-main.png"  class="img-fluid img-thumbnail z-depth-3" >
+      <div class="mask rgba-red-slight">
       </div>
     </div>
-  </mdb-card>
+  </div>
+</div>
 
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor, tellus quis bibendum fermentum, dolor urna
-    viverra elit, sed gravida risus orci ac ipsum. Mauris ac neque tincidunt, feugiat mi sed, fermentum est. Praesent
-    mauris sapien, ultricies sed luctus sit amet, condimentum sed neque. Vestibulum dapibus faucibus convallis. Quisque
-    ut lectus non ligula euismod sagittis. Cras at diam quis eros lobortis tincidunt quis ac nunc. Etiam interdum vel
-    nulla non efficitur. Nulla id ligula at lectus sollicitudin lacinia. Phasellus convallis vehicula lorem vel
-    accumsan. Nullam dolor lorem, rhoncus ut mattis a, sagittis et nibh. Integer sollicitudin facilisis efficitur.
-    Phasellus et ex vitae odio aliquet gravida id a leo. Nulla facilisi. Nulla facilisi.
-  </p>
-  <p>
-    Donec leo est, dictum ut neque et, vulputate tempor nulla. Ut dictum tempor nibh ut porttitor. Praesent sit amet
-    volutpat justo. Nullam eleifend sollicitudin porta. Proin hendrerit ligula nisi. Nullam placerat accumsan magna sed
-    consequat. Fusce a enim vitae tellus pharetra scelerisque. Mauris feugiat nunc in dui commodo, non posuere leo
-    aliquam. Mauris tincidunt sed leo non pulvinar.
-  </p>
-  <p>
-    Duis nec cursus lacus. Vivamus fermentum vitae nibh nec congue. Vivamus eget bibendum tortor, eu fringilla tellus.
-    Donec eleifend accumsan euismod. Suspendisse interdum ultrices odio non congue. Ut aliquam tellus sapien, id
-    sagittis felis ultrices sed. Vivamus placerat lorem mi, a sollicitudin purus dictum vel. In hac habitasse platea
-    dictumst. Mauris placerat pellentesque lectus, eget blandit justo elementum ac. Sed a accumsan est, vel facilisis
-    nisl. Proin sem dui, venenatis non consequat at, posuere eu mauris. Vivamus in tortor vitae dolor tempus gravida.
-  </p>
-  <p>
-    Mauris dignissim gravida consequat. Maecenas ultricies ipsum dui, in dignissim elit tincidunt nec. Sed tincidunt,
-    tortor sed aliquam efficitur, neque felis cursus nunc, nec porta sapien risus eu libero. Nam commodo nisi eu lorem
-    iaculis fermentum. Phasellus consectetur tortor quis augue efficitur vestibulum. Quisque eget mattis velit. Fusce
-    gravida mauris sit amet ante auctor efficitur. Pellentesque a quam sodales, mattis odio vel, malesuada ex. Nullam
-    vitae ligula sit amet lectus interdum malesuada. Pellentesque sit amet quam non lectus laoreet viverra. Nulla
-    euismod turpis enim, vitae auctor odio sollicitudin laoreet. Pellentesque maximus orci non risus accumsan, ut
-    rhoncus neque lacinia. Etiam ut consequat felis.
-  </p>
+<hr class="mt-2 mx-4">
+<hr class="mt-2 mx-5">
+  <h2 class="ml-3 text-danger font-weight-bold">Últimas Novedades!</h2>
+
+  <div class="row mx-0">
+    <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" *ngFor="let producto of productos">
+      <mdb-card class="my-3 cardDetalles">
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <mdb-card-img src="{{urlImagenes}}{{producto.imagenPortada}}" alt="Imagen {{producto.nombre}}"></mdb-card-img>
+          <a [routerLink]="['/producto', producto.nombre]">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4>{{producto.nombre}}</h4>
+          </mdb-card-title>
+
+          <mdb-card-text>
+            {{producto.descripcionCorta}}
+          </mdb-card-text>
+          <p class="text-success text-right">
+            {{producto.precio ? '$' + producto.precio : 'GRATIS!'}}
+          </p>
+
+        </mdb-card-body>
+        <a mdbBtn mdbWavesEffect color="primary" [routerLink]="['/producto', producto.nombre]">
+          <mdb-icon fas icon="plus"></mdb-icon> Info
+        </a>
+      </mdb-card>
+    </div>
+  </div>
+
+
 </div>

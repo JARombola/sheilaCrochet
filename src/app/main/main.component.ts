@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInOnEnterAnimation } from 'angular-animations';
+import { fadeInOnEnterAnimation, zoomInOnEnterAnimation, fadeInRightOnEnterAnimation } from 'angular-animations';
+import { Producto } from 'src/producto';
+import { RepoProductosService } from 'src/repo-productos.service';
 
 @Component({
   selector: 'app-main',
@@ -7,17 +9,19 @@ import { fadeInOnEnterAnimation } from 'angular-animations';
   styleUrls: ['./main.component.scss'],
   animations: [
     fadeInOnEnterAnimation(),
+    zoomInOnEnterAnimation(),
+    fadeInRightOnEnterAnimation({translate: '20%'}),
   ]
 })
 export class MainComponent implements OnInit {
+  urlImagenes = 'assets/';
+  productos: Producto[];
 
-  public imagen = 'https://laopinionla.files.wordpress.com/2018/11/shutterstock_765966355.jpg?quality=80&strip=all&w=940';
-
-  constructor() { }
+  constructor(private prodService: RepoProductosService) { }
 
   ngOnInit() {
-    this.imagen = 'https://laopinionla.files.wordpress.com/2018/11/shutterstock_765966355.jpg?quality=80&strip=all&w=940';
-
+    this.productos = this.prodService.getNovedades(4);
+    console.log(this.productos);
   }
 
 

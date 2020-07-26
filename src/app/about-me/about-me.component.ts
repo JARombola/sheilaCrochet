@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInOnEnterAnimation } from 'angular-animations';
+import { fadeInOnEnterAnimation, rotateInOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-about-me',
@@ -7,6 +7,7 @@ import { fadeInOnEnterAnimation } from 'angular-animations';
   styleUrls: ['./about-me.component.scss'],
   animations: [
     fadeInOnEnterAnimation(),
+    rotateInOnEnterAnimation({degrees: -30}),
   ]
 })
 export class AboutMeComponent implements OnInit {

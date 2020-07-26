@@ -13,6 +13,7 @@ import { RepoProductosService } from 'src/repo-productos.service';
 })
 export class ShopComponent implements OnInit {
   productos: Producto[];
+  urlImagenes = 'assets/';
   constructor(private productosService: RepoProductosService) { }
 
   ngOnInit() {

@@ -15,12 +15,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailsComponent implements OnInit {
   producto: Producto;
+  urlImagenes = 'assets/';
 
   constructor(private productos: RepoProductosService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const productId = +this.route.snapshot.paramMap.get('id');
-    this.producto = this.productos.getProduct(productId);
+    const nombreProducto = this.route.snapshot.paramMap.get('id');
+    this.producto = this.productos.getProduct(nombreProducto);
   }
 }
 

@@ -1,29 +1,34 @@
 <div class="containerClass" [@fadeInOnEnter]>
-<div class="row mx-0">
-  <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" *ngFor = "let producto of productos">
-    <mdb-card class="my-3 cardDetalles" >
-      <div class="view overlay waves-light" mdbWavesEffect>
-        <mdb-card-img src="{{producto.urlImagen}}" alt="Card image cap"></mdb-card-img>
-        <a routerLink="/detalles">
-          <div class="mask rgba-white-slight"></div>
-        </a>
-      </div>
-      <mdb-card-body>
-        <mdb-card-title>
-          <h4>{{producto.nombre}}</h4>
-        </mdb-card-title>
-        
-        <mdb-card-text>
-          {{producto.descripcionCorta}} 
-        </mdb-card-text>
+  <div class="row mx-0">
+    <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" *ngFor="let producto of productos">
+      <mdb-card class="my-3 cardDetalles">
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <mdb-card-img src="{{urlImagenes}}{{producto.imagenPortada}}" alt="Imagen {{producto.nombre}}"></mdb-card-img>
+          <a [routerLink]="['/producto', producto.nombre]">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4>{{producto.nombre}}</h4>
+          </mdb-card-title>
 
-      </mdb-card-body>
-      <a mdbBtn mdbWavesEffect color="primary" [routerLink]="['/producto', producto.id]"><mdb-icon fas icon="plus"></mdb-icon> Info </a>
-    </mdb-card>
+          <mdb-card-text>
+            {{producto.descripcionCorta}}
+          </mdb-card-text>
+          <p class="text-success text-right">
+            {{producto.precio ? '$' + producto.precio : 'GRATIS!'}}
+          </p>
+
+        </mdb-card-body>
+        <a mdbBtn mdbWavesEffect color="primary" [routerLink]="['/producto', producto.nombre]">
+          <mdb-icon fas icon="plus"></mdb-icon> Info
+        </a>
+      </mdb-card>
+    </div>
   </div>
 </div>
-</div>
-  <!-- <div class="card-deck mx-2 py-2">
+<!-- <div class="card-deck mx-2 py-2">
         <mdb-card *ngFor = "let producto of productos" class="my-3">
           <div class="view overlay waves-light" mdbWavesEffect>
             <mdb-card-img src="{{producto.urlImagen}}" alt="Card image cap"></mdb-card-img>

@@ -1,20 +1,17 @@
 .titulo {
     font-family: 'Kalam', cursive;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 h1, h3 {
     font-family: 'Kalam', cursive;
 }
 
-p {
+h2 {
     font-family: 'Comfortaa', cursive;
-    font-size: 20px;
 }
 
-#imagenPrincipal {
-    background-image: url('/assets/adm-main.png');
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;              /* optional, center the image */
+p {
+    font-family: 'Comfortaa', cursive;
+    font-size: 25px;
 }

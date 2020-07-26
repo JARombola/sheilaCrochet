@@ -1,42 +1,43 @@
-<div class="containerClass" [@fadeInLeftOnEnter]>
+<div class="containerClass text-justify" [@fadeInLeftOnEnter]>
     <h1 class="ml-3 teal-text "><mdb-icon fas icon="sun" class="indigo-text pr-3" aria-hidden="true"></mdb-icon>{{producto.nombre | uppercase }}</h1>
     <div class="row no-gutters">
         <div class="col-md-4 m-3 ">
-            <mdb-carousel [animation]="'slide'" class="z-depth-2">
-                <mdb-carousel-item>
-                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg"
-                        alt="First slide">
-                </mdb-carousel-item>
-                <mdb-carousel-item>
-                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg"
-                        alt="Second slide">
-                </mdb-carousel-item>
-                <mdb-carousel-item>
-                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"
-                        alt="Third slide">
+
+            <mdb-carousel [animation]="'slide'" class="z-depth-2" *ngIf = "producto.imagenesUrl.length > 1">
+                <mdb-carousel-item *ngFor = "let url of producto.imagenesUrl">
+                    <img class="d-block w-100" src="{{urlImagenes}}{{url}}"
+                        alt="Imagen {{producto.nombre}}">
                 </mdb-carousel-item>
             </mdb-carousel>
+
+            <img class ="z-depth-2 img-thumbnail" *ngIf = "producto.imagenesUrl.length <= 1"
+            src="{{urlImagenes}}{{producto.imagenesUrl[0]}}" alt="Imagen {{producto.nombre}}">
         </div>
-        <div class="col detalles mt-2 ml-5">
+        <div class="col detalles mt-2 mx-lg-5 mx-3">
             <div class="row no-gutters mb-4">
-                <div class="col-sm-4 col-l-2 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Producto: </div>
+                <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Producto: </div>
                 <div class="col">{{producto.nombre}}</div>
             </div>
             <div class="row no-gutters mb-4">
-                <div class="col-sm-4 col-l-2 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Descripción: </div>
+                <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Descripción: </div>
                 <div class="col">{{producto.descripcionLarga}}</div>
             </div>
             <div class="row no-gutters mb-4">
-                <div class="col-sm-4 col-l-2 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Detalles: </div>
+                <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Detalles: </div>
                 <div class="col">{{producto.detalles}}</div>
             </div>
             <div class="row no-gutters mb-4">
-                <div class="col-4 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Precio: </div>
-                <div class="col">${{producto.precio}}</div>
+                <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Precio (Arg): </div>
+                <div class="col" >{{producto.precio ? '$' + producto.precio : 'GRATIS!'}}</div>
             </div>
             <div class="row no-gutters mb-4 justify-content-center">
-                    <a block="true" mdbBtn href="{{producto.urlMP}}" target="_blank" role="button" color="primary" rounded="true" mdbWavesEffect><mdb-icon fas icon="external-link-alt"></mdb-icon> Comprar!</a>
+                    <a block="true" mdbBtn href="{{producto.urlMP}}" target="_blank" role="button" color="primary" rounded="true" mdbWavesEffect><mdb-icon fas icon="external-link-alt"></mdb-icon> ¡Lo quiero!</a>
             </div>
+
+
+            <p class="nota font-italic text-muted">
+                <u>*Otros países</u>: Enviar un mail a <a href="mailto:tejidosalgodemi@gmail.com"> tejidosalgodemi@gmail.com</a> solicitando link de <b>PayPal</b>.
+            </p>
 
         </div>
     </div>

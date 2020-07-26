@@ -4,7 +4,8 @@ export class Producto {
     descripcionLarga: string;
     detalles: string;
     precio: number;
-    urlImagen: string;
+    imagenesUrl: string[];
+    imagenPortada: string;
     urlMP: string;
     id: number;
 }
