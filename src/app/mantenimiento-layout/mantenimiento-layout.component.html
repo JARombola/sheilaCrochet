@@ -1,0 +1,21 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark elegant-color-dark" [containerInside]="false">
+    <mdb-navbar-brand><a class="navbar-brand" routerLink="/admin/">Algo De Mí (ADMIN)</a></mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto" (click)="currentPath()">
+        <li class="nav-item" [ngClass]="path == '/admin/quien-soy' ? 'active' : ''">
+          <a class="nav-link waves-light" routerLinkActive="active" mdbWavesEffect routerLink="/admin/quien-soy"><mdb-icon far icon="grin-stars"></mdb-icon>¿Quién soy?</a>
+        </li>
+        <li class="nav-item" [ngClass]="path == '/admin/shop' ? 'active' : ''">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/admin/shop"><mdb-icon fas icon="shopping-cart"></mdb-icon>Shop</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.instagram.com/algodemi.tejidos/" target="_blank" title="Seguime en Instagram!">
+            <mdb-icon fab icon="instagram"></mdb-icon>
+          </a>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+<router-outlet></router-outlet>

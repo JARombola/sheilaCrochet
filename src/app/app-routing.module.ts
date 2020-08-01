@@ -5,6 +5,9 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ShopComponent } from './shop/shop.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
+import { environment } from 'src/environments/environment';
+import { MantenimientoLayoutComponent } from './mantenimiento-layout/mantenimiento-layout.component';
 
 
 const routes: Routes = [
@@ -27,8 +30,31 @@ const routes: Routes = [
   }
 ];
 
+const rutasMantenimiento: Routes = [
+  {
+    path: '', component: MantenimientoComponent
+  },
+  {
+    path: 'admin', component: MantenimientoLayoutComponent,
+    children: [
+    {
+       path: '', component: MainComponent
+    },
+    {
+      path: 'quien-soy', component: AboutMeComponent
+    },
+    {
+      path: 'shop', component: ShopComponent
+    },
+    {
+      path: 'producto/:id', component: ProductDetailsComponent
+    },
+    ]
+  }
+];
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(environment.mantenimiento ? rutasMantenimiento : routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

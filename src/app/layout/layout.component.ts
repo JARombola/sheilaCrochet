@@ -8,21 +8,14 @@ import { Router } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
   public path: string;
-  public colorOrigin = 'navbar navbar-expand-lg';
-  public color: string;
-  public colorUser = ' navbar-dark secondary-color';
 
   constructor(private route: Router) { }
 
   ngOnInit() {
-    this.color = this.colorOrigin + this.colorUser;
   }
 
   currentPath() {
     this.path = this.route.url;
   }
 
-  changeColor() {
-    this.color = this.colorOrigin + this.colorUser;
-  }
 }

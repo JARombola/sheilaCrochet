@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { fadeInLeftOnEnterAnimation, swingAnimation} from 'angular-animations';
 import { Producto } from 'src/producto';
 import { RepoProductosService } from 'src/repo-productos.service';

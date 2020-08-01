@@ -4,7 +4,7 @@
       <mdb-card class="my-3 cardDetalles">
         <div class="view overlay waves-light" mdbWavesEffect>
           <mdb-card-img src="{{urlImagenes}}{{producto.imagenPortada}}" alt="Imagen {{producto.nombre}}"></mdb-card-img>
-          <a [routerLink]="['/producto', producto.nombre]">
+          <a [routerLink]="[mantenimiento ? '/admin/producto' : '/producto', producto.nombre]">
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
@@ -21,32 +21,10 @@
           </p>
 
         </mdb-card-body>
-        <a mdbBtn mdbWavesEffect color="primary" [routerLink]="['/producto', producto.nombre]">
+        <a mdbBtn mdbWavesEffect color="primary" [routerLink]="[mantenimiento ? '/admin/producto' : '/producto', producto.nombre]">
           <mdb-icon fas icon="plus"></mdb-icon> Info
         </a>
       </mdb-card>
     </div>
   </div>
 </div>
-<!-- <div class="card-deck mx-2 py-2">
-        <mdb-card *ngFor = "let producto of productos" class="my-3">
-          <div class="view overlay waves-light" mdbWavesEffect>
-            <mdb-card-img src="{{producto.urlImagen}}" alt="Card image cap"></mdb-card-img>
-            <a routerLink="/detalles">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-          <mdb-card-body>
-            <mdb-card-title>
-              <h4>{{producto.nombre}}</h4>
-            </mdb-card-title>
-            
-            <mdb-card-text>
-              {{producto.descripcionCorta}} 
-            </mdb-card-text>
-
-              <a mdbBtn mdbWavesEffect color="primary" routerLink="/detalles">+ Info!</a>
-          </mdb-card-body>
-        </mdb-card>
-    </div>
-  </div> -->

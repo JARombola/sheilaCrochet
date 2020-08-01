@@ -8,4 +8,5 @@ export class Producto {
     imagenPortada: string;
     urlMP: string;
     id: number;
+    conocimientos: string;
 }

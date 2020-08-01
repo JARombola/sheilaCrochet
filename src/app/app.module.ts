@@ -12,6 +12,8 @@ import { ShopComponent } from './shop/shop.component';
 import { LayoutComponent } from './layout/layout.component';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
+import { MantenimientoLayoutComponent } from './mantenimiento-layout/mantenimiento-layout.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,16 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     AboutMeComponent,
     ShopComponent,
     LayoutComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    MantenimientoComponent,
+    MantenimientoLayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

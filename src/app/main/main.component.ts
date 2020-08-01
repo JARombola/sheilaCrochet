@@ -17,11 +17,11 @@ export class MainComponent implements OnInit {
   urlImagenes = 'assets/';
   productos: Producto[];
 
-  constructor(private prodService: RepoProductosService) { }
+  constructor(private prodService: RepoProductosService) {
+   }
 
   ngOnInit() {
     this.productos = this.prodService.getNovedades(4);
-    console.log(this.productos);
   }
 
 

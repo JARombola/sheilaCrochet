@@ -12,7 +12,8 @@ import { fadeInOnEnterAnimation, rotateInOnEnterAnimation } from 'angular-animat
 })
 export class AboutMeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

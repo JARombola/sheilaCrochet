@@ -26,6 +26,10 @@
                 <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Detalles: </div>
                 <div class="col">{{producto.detalles}}</div>
             </div>
+            <div class="row no-gutters mb-4" *ngIf="!!producto.conocimientos">
+                <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Necesario: </div>
+                <div class="col">{{producto.conocimientos}}</div>
+            </div>
             <div class="row no-gutters mb-4">
                 <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Precio (Arg): </div>
                 <div class="col" >{{producto.precio ? '$' + producto.precio : 'GRATIS!'}}</div>
@@ -34,8 +38,7 @@
                     <a block="true" mdbBtn href="{{producto.urlMP}}" target="_blank" role="button" color="primary" rounded="true" mdbWavesEffect><mdb-icon fas icon="external-link-alt"></mdb-icon> ¡Lo quiero!</a>
             </div>
 
-
-            <p class="nota font-italic text-muted">
+            <p class="nota font-italic text-muted" *ngIf = "producto.precio > 0">
                 <u>*Otros países</u>: Enviar un mail a <a href="mailto:tejidosalgodemi@gmail.com"> tejidosalgodemi@gmail.com</a> solicitando link de <b>PayPal</b>.
             </p>
 

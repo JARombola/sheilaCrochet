@@ -1,4 +1,4 @@
-<mdb-navbar [SideClass]="color" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark secondary-color" [containerInside]="false">
     <mdb-navbar-brand><a class="navbar-brand" routerLink="/">Algo De Mí</a></mdb-navbar-brand>
     <links>
       <ul class="navbar-nav mr-auto" (click)="currentPath()">
@@ -18,9 +18,4 @@
       </ul>
     </links>
   </mdb-navbar>
-      <!-- <div class="md-form">
-          <input mdbInput type="text" id="form1" class="form-control" [(ngModel)]="colorUser" (blur)="changeColor()">
-          <label for="form1" class="">Color</label>
-          <a href="https://mdbootstrap.com/docs/angular/css/colors/" target="_blank" class=""><b>COLORES</b></a>
-      </div> -->
 <router-outlet></router-outlet>
