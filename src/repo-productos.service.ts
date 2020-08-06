@@ -50,7 +50,7 @@ export class RepoProductosService {
     producto.descripcionLarga = 'En el curso te enseño cómo adaptar el Cárdigan a todos tus gusto: si lo querés más largo, más corto, si querés tan sólo la espalda más larga. Además te explico dos diseños de mangas! También te enseño cómo adaptarlo a  cualquier hilado.';
     producto.detalles = 'Incluye acceso a clases de consulta vía mail.\n' +
     'Las clases ya están grabadas: podes verlas CUANDO quieras y LAS VECES que quieras.';
-    producto.precio = 800;
+    producto.precio = 860;
     producto.urlMP = 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=259278692-78d992ba-2ee5-4de0-a681-528ea6e4399e';
     producto.imagenPortada = 'cardiganAnna/cardiganAnnaMin.jpg';
     producto.imagenesUrl = ['cardiganAnna/cardiganAnna1.jpg', 'cardiganAnna/cardiganAnna2.jpg', 'cardiganAnna/cardiganAnna3.jpg'];
@@ -77,7 +77,8 @@ export class RepoProductosService {
     producto.nombre = 'Curso Crochet (Principiantes)';
     producto.descripcionCorta = '¿Nunca tejiste?  ¿Querés convertirte en toda  una crochetera? ¡Esta es tú oportunidad!';
     producto.descripcionLarga = 'Curso para aquellas que nunca tejieron y quieren aprender. Se realizan 5 proyectos en los que vas a aprender los puntos básicos y formas básicas. Aprenderás “la base del crochet” y estarás lista para seguir aprendiendo más de esta bella técnica.';
-    producto.detalles = 'Incluye acceso a clases de consulta vía mail.\n Las clases ya están grabadas: podés verlas CUÁNDO quieras y LAS VECES que quieras.';
+    producto.detalles = 'Incluye acceso a clases de consulta vía mail.\nLas clases ya están grabadas: podés verlas CUÁNDO quieras y LAS VECES que quieras.\n'
+    + 'Además... ¡INCLUYE PROYECTO DE REGALO!';
     producto.precio = 800;
     producto.urlMP = 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=259278692-40bd7cb0-21b2-4353-9d04-c8dc6f9f04cc';
     producto.imagenPortada = 'cursoPrincipiantes/adm-cursoPrincipiantesMin.png';
@@ -141,7 +142,7 @@ export class RepoProductosService {
     producto.conocimientos = 'Saber contar puntos, vueltas, realizar puntos básicos (vareta, media vareta, medio punto, punto deslizado) y saber leer gráficos.';
     return producto;
   }
-
+  
   private chaquetaGladysVideo(): Producto {
     const producto = new Producto();
     producto.nombre = 'Chaqueta Gladys (PDF + Videos)';
@@ -151,7 +152,7 @@ export class RepoProductosService {
     producto.precio = 500;
     producto.urlMP = 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=259278692-b907761e-f776-45fe-a36b-3148d9e19a40';
     producto.imagenPortada = 'chaquetaGladys/adm-chaquetaGladysMin.jpg';
-    producto.imagenesUrl = ['chaquetaGladys/adm-chaquetaGladys.jpg'];
+    producto.imagenesUrl = ['chaquetaGladys/adm-chaquetaGladys1.png', 'chaquetaGladys/adm-chaquetaGladys2.png', 'chaquetaGladys/adm-chaquetaGladys3.png', 'chaquetaGladys/adm-chaquetaGladys4.png'];
     producto.conocimientos = 'Saber contar puntos, vueltas y realizar puntos básicos (vareta, media vareta, medio punto, punto deslizado) y saber leer gráficos. Si no sabes leerlos, no te preocupes! Vas a poder guiarse solamente por los videos.';
     return producto;
   }

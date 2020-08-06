@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'producto/:id', component: ProductDetailsComponent
       },
     ]
+  },
+  {
+    path: '**',
+    redirectTo: '',
   }
 ];
 
@@ -50,6 +54,10 @@ const rutasMantenimiento: Routes = [
       path: 'producto/:id', component: ProductDetailsComponent
     },
     ]
+  },
+  {
+    path: '**',
+    redirectTo: '',
   }
 ];
 
