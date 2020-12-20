@@ -28,6 +28,9 @@ export class RepoProductosService {
     this.productosList.push(this.cursoChalecoSheila());
     this.productosList.push(this.sweaterDora());
     this.productosList.push(this.remeraGraciela());
+    this.productosList.push(this.musculosaAndrea());
+    this.productosList.push(this.remeraDora());
+    this.productosList.push(this.comboDora());
     // Gratis
     this.productosList.push(this.mandalas());
     this.productosList.push(this.musculosaFlor());
@@ -208,7 +211,7 @@ export class RepoProductosService {
   private remeraGraciela(): Producto {
     const producto = new Producto();
     producto.nombre = 'Remera Graciela';
-    producto.descripcionCorta = '¿Estás preparada para tejer en modo primavera Crochetera? En este Curso te traigo una bella y dulce opción!'
+    producto.descripcionCorta = '¿Estás preparada para tejer en modo primavera Crochetera? En este Curso te traigo una bella y dulce opción!';
     producto.descripcionLarga = 'Es una remera muy sencilla de realizar, ideal si querés tejer tu primera prenda. Es fresca y MUY cómoda, porque te enseño a adaptarla a tu gusto y talle. Además contas con mi apoyo constante a medida que la vas haciendo. Podés hacerme las preguntas que necesites!';
     producto.detalles = 'GUIA PDF. Vas a encontrar el paso a paso escrito + gráficos.\n'
     + 'VIDEOS YA FILMADOS: Podés ver las clases CUANDO quieras y LAS VECES que quieras. Se adapta perfecto a tu rutina!\n'
@@ -221,6 +224,57 @@ export class RepoProductosService {
     producto.conocimientos = 'Deberás contar con conocimientos mínimos de crochet (sobre todo punto vareta), pero no hace falta ser una experta! Ya que está remera ES SÚPER FÁCIL';
     return producto;
   }
+
+  private remeraDora(): Producto {
+    const producto = new Producto();
+    producto.nombre = 'Remera Dora';
+    producto.descripcionCorta = '¿Sabías que esta remera no lleva costuras? Sí, tal cual lo leíste. Es rápida, fácil y no lleva costuras! ¡Es perfecta! ';
+    producto.descripcionLarga = 'Inspirada en el Sweater Dora, llega su versión en remera. Esta prenda es súper especial porque NO LLEVA COSTURAS. Ideal para todas las que no les gusta coser (¡Cómo yo!)';
+    producto.detalles = 'GUIA PDF. Vas a encontrar el paso a paso escrito + gráficos.\n'
+    + 'Además, incluye de regalo 2 videos que si bien pertenecen al Sweater Dora, te van a ser de mucha ayuda a la hora de tejer la remera.';
+    producto.precio = 863;
+    producto.urlMP = 'https://mpago.la/2bR7JyS ';
+    producto.imagenPortada = 'remeraDora/adm-remeraDoraMin.jpg';
+    producto.imagenesUrl = ['remeraDora/adm-remeraDora1.jpg', 'remeraDora/adm-remeraDora2.jpg', 'remeraDora/adm-remeraDora3.jpg', 'remeraDora/adm-remeraDora4.jpg'];
+    producto.conocimientos = 'Deberás contar con conocimientos mínimos de crochet (sobre todo punto vareta), pero no hace falta ser una experta! Ya que está remera ES SÚPER FÁCIL';
+    return producto;
+  }
+
+
+  private comboDora(): Producto {
+    const producto = new Producto();
+    producto.nombre = 'Combo Dora';
+    producto.descripcionCorta = '¡Combo qué vas a amar! Ideal para la primavera.';
+    producto.descripcionLarga = 'En este combo vas a poder disfrutar del Patrón de la Remera Dora + El curso del Sweater Dora. ¡Dos prendas que no pueden faltar en tu primavera Crochetera!';
+    producto.detalles = 'Incluye acceso a clases de consulta vía mail (Curso Sweater).\n'
+    + 'VIDEOS YA FILMADOS: Podés ver las clases CUANDO quieras y LAS VECES que quieras.\n';
+    producto.precio = 1402;
+    producto.urlMP = 'https://mpago.la/2jXnK5j';
+    producto.imagenPortada = 'comboDora/adm-comboDoraMin.jpeg';
+    producto.imagenesUrl = ['comboDora/adm-comboDora1.jpeg', 'remeraDora/adm-remeraDora1.jpg'];
+    producto.conocimientos = 'Deberás tener conocimientos básicos de crochet: saber contar puntos, vueltas y realizar puntos básicos. En el curso te doy una explicación breve de estos puntos pero no aplica como práctica de los mismos.';
+    return producto;
+  }
+
+
+
+  private musculosaAndrea(): Producto {
+    const producto = new Producto();
+    producto.nombre = 'Musculosa Andrea';
+    producto.descripcionCorta = '¿Es Crochet? SÍ! Siempre es crochet, aunque parece 2 agujas. Te prometo que vas a amar tanto la elaboración como la musculosa terminada.';
+    producto.descripcionLarga = 'En este curso te enseño a hacer una musculosa que se adapte a vos. Además te enseño a imitar un punto que parece dos agujas pero no lo es, siempre es crochet. Yo hice 3! Porque de verdad se hacen súper rápido.';
+    producto.detalles = 'Clases de consulta de LUNES A VIERNES vía mail.\n'
+    + 'Guía PDF paso a paso con explicaciones escritas y gráficos.\n'
+    + 'Videos explicativos que ya están grabados: vas a poder verlos las veces que quieras y cuando quieras.'
+    + '¡Indicaciones para hacer los 3 modelos de la musculosa que ves en las fotos!';
+    producto.precio = 1025;
+    producto.urlMP = 'https://mpago.la/1vdUY2G';
+    producto.imagenPortada = 'musculosaAndrea/adm-musculosaAndreaMin.jpg';
+    producto.imagenesUrl = ['musculosaAndrea/adm-musculosaAndrea1.jpg', 'musculosaAndrea/adm-musculosaAndrea2.jpg', 'musculosaAndrea/adm-musculosaAndrea3.jpg', 'musculosaAndrea/adm-musculosaAndrea4.jpg', 'musculosaAndrea/adm-musculosaAndrea5.jpg'];
+    return producto;
+  }
+
+
   // --------------------------------------------------------------------------------------
   // --------------------------------------- GRATIS ---------------------------------------
   // --------------------------------------------------------------------------------------

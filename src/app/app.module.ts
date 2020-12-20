@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
 import { MantenimientoLayoutComponent } from './mantenimiento-layout/mantenimiento-layout.component';
+import { TestEstilosComponent } from './test-estilos/test-estilos.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MantenimientoLayoutComponent } from './mantenimiento-layout/mantenimien
     ProductDetailsComponent,
     MantenimientoComponent,
     MantenimientoLayoutComponent,
+    TestEstilosComponent,
   ],
   imports: [
     BrowserModule,

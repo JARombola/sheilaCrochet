@@ -8,6 +8,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
 import { environment } from 'src/environments/environment';
 import { MantenimientoLayoutComponent } from './mantenimiento-layout/mantenimiento-layout.component';
+import { TestEstilosComponent } from './test-estilos/test-estilos.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,9 @@ const routes: Routes = [
         path: 'producto/:id', component: ProductDetailsComponent
       },
     ]
+  },
+  {
+    path: 'pruebaEstilos', component: TestEstilosComponent
   },
   {
     path: '**',

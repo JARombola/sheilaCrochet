@@ -34,12 +34,17 @@
                 <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Precio (Arg): </div>
                 <div class="col" >{{producto.precio ? '$' + producto.precio : 'GRATIS!'}}</div>
             </div>
+            <div class="row no-gutters mb-4" *ngIf = "producto.precio > 0">
+                <div class="col-sm-4 col-lg-3 font-weight-bold pulsate-fwd"><mdb-icon far icon="heart"></mdb-icon> Transferencia: </div>
+                <div class="col" >{{'$' + (producto.precio * 0.9275 | number:'1.0-0')}}</div>
+                <a href="mailto:tejidosalgodemi@gmail.com?subject=Datos%20Transferencia%20{{producto.nombre}}&body=Hola!%0D%0AQuería%20solicitar%20los%20datos%20bancarios%20para%20realizar%20compra%20por%20transferencia%20del%20producto:%20{{producto.nombre}}.%0D%0AMuchas%20Gracias.%0D%0A%0D%0A">  Solicitar datos <i class="far fa-envelope"></i></a>
+            </div>
             <div class="row no-gutters mb-4 justify-content-center">
                     <a block="true" mdbBtn href="{{producto.urlMP}}" target="_blank" role="button" color="primary" rounded="true" mdbWavesEffect><mdb-icon fas icon="external-link-alt"></mdb-icon> ¡Lo quiero!</a>
             </div>
 
             <p class="nota font-italic text-muted" *ngIf = "producto.precio > 0">
-                <u>*Otros países</u>: Enviar un mail a <a href="mailto:tejidosalgodemi@gmail.com"> tejidosalgodemi@gmail.com</a> solicitando link de <b>PayPal</b>.
+                <u>*Otros países</u>: Enviar un mail a <a href="mailto:tejidosalgodemi@gmail.com?subject=Link%20PayPal%20{{producto.nombre}}&body=Hola!%0D%0AQuería%20solicitar%20el%20link%20de%20PayPal%20para%20el%20producto:%20{{producto.nombre}}.%0D%0AMuchas%20Gracias.%0D%0A%0D%0A"> tejidosalgodemi@gmail.com</a> solicitando link de <b>PayPal</b>.
             </p>
 
         </div>

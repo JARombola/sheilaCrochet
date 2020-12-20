@@ -99,3 +99,15 @@ footer {
 .cardDetalles .card mdb-card-img img {
     max-height: 200px;
 }
+.card .card-body .card-text {
+  font-size: 1rem !important;
+  margin-bottom: 40px !important;
+}
+
+mdb-card-body > p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
+}

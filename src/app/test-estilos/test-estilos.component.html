@@ -1,0 +1,148 @@
+<mdb-navbar [SideClass]="top" [containerInside]="false">
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/">Algo De Mí</a></mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLinkActive="active" mdbWavesEffect routerLink="/quien-soy"><mdb-icon far icon="grin-stars"></mdb-icon>¿Quién soy?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/shop"><mdb-icon fas icon="shopping-cart"></mdb-icon>Shop</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.instagram.com/algodemi.tejidos/" target="_blank" title="Seguime en Instagram!">
+          <mdb-icon fab icon="instagram"></mdb-icon>
+        </a>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>
+<div [@fadeInOnEnter] [class]="fondo">
+  
+  <a mdbBtn mdbWavesEffect color="success" mdbWavesEffect href="https://mdbootstrap.com/docs/angular/css/colors/" target="_blank">Colores</a>
+  <div class ="row no-gutters" style="background-color: white;">
+    <div class="col">
+      <div class="md-form">
+        <input mdbInput type="text" id="form1" class="form-control" [(ngModel)]="fondoAux">
+        <label for="form1" class="">Color Fondo</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="md-form">
+        <input mdbInput type="text" id="form2" class="form-control" [(ngModel)]="botonesAux">
+        <label for="form2" class="">Color Botones</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="md-form">
+        <input mdbInput type="text" id="form3" class="form-control" [(ngModel)]="topAux">
+        <label for="form3" class="">Color Barra Arriba</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="md-form">
+        <input mdbInput type="text" id="form4" class="form-control" [(ngModel)]="botAux">
+        <label for="form4" class="">Color Barra Abajo</label>
+      </div>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary" (click)="cambiarColores()">Ok</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary" (click)="originales()">Originales</button>
+    </div>
+  </div>
+
+    <div class="row no-gutters">
+      <div class="col-md-6" [@zoomInOnEnter]>
+        <div class="d-flex indigo-text lady-lips-gradient flex-column justify-content-center align-items-center h-100">
+          <h1 class="titulo1">¡Bienvenida Crochetera!</h1>
+          <p class="my-2">
+            Te invito a formar parte del mundo <strong class="blue-text titulo font-weight-bold">Algo de Mí!</strong>
+          </p> 
+            <p class="px-2 mt-4">
+            Para que tejamos juntas y compartamos esta bella pasión por el crochet.
+          </p>
+        </div>
+    
+      </div>
+      <div class="col-md-6" [@fadeInRightOnEnter]>
+    
+        <div class="view">
+          <img src="/assets/adm-main.png"  class="img-fluid img-thumbnail z-depth-3" >
+          <div class="mask rgba-red-slight">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="mt-3 mx-4">
+    <h1 class="d-flex justify-content-center my-4 animated pulse slow delay-1s link-hover rgba-yellow-light mx-5">
+        <a class="slide-right slide-left text-reset" routerLink="/shop">
+          <i class="far fa-hand-point-right"></i> ¡VER PRODUCTOS! <i class="far fa-hand-point-left"></i>
+        </a>
+    </h1>
+    
+    <hr class="mb-3 mx-4">
+    
+    
+    <h2 class="ml-3 text-danger font-weight-bold">Últimas Novedades! <i class="far fa-heart"></i></h2>
+      <div class="row mx-0">
+        <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" *ngFor="let producto of productos">
+          <mdb-card class="my-3 cardDetalles">
+            <div class="view overlay waves-light" mdbWavesEffect>
+              <mdb-card-img src="{{urlImagenes}}{{producto.imagenPortada}}" alt="Imagen {{producto.nombre}}"></mdb-card-img>
+              <a [routerLink]="['/producto', producto.nombre]">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>{{producto.nombre}}</h4>
+              </mdb-card-title>
+    
+              <mdb-card-text>
+                {{producto.descripcionCorta}}
+              </mdb-card-text>
+              <p class="text-success text-right">
+                {{producto.precio ? '$' + producto.precio : 'GRATIS!'}}
+              </p>
+    
+            </mdb-card-body>
+            <a mdbBtn mdbWavesEffect [ngClass]="botones" [color]="botones" [routerLink]="['/producto', producto.nombre]">
+              <mdb-icon fas icon="plus"></mdb-icon> Info
+            </a>
+          </mdb-card>
+        </div>
+      </div>
+</div>
+
+<footer class="page-footer" [ngClass]="bot">
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12 py-3">
+        <div class="mb-1 d-flex justify-content-between">
+
+        <a class="ins-ic" href="https://www.instagram.com/algodemi.tejidos/" target="_blank" title="Seguime en Instagram!">
+            <mdb-icon fab icon="instagram" size="2x" class="white-text"></mdb-icon>
+        </a>
+
+
+          <a class="fb-ic">
+            <mdb-icon fab icon="facebook" size="2x" class="white-text"></mdb-icon>
+          </a>
+
+          <!-- <a class="pin-ic">
+              <mdb-icon fab icon="pinterest" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
+          </a> -->
+
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright text-center py-3">© 2020 Algo de Mi Tejidos - <a href="mailto:tejidosalgodemi@gmail.com"> tejidosalgodemi@gmail.com</a>
+  </div>
+</footer>

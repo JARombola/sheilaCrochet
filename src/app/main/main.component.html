@@ -3,7 +3,7 @@
 <div class="row no-gutters">
   <div class="col-md-6" [@zoomInOnEnter]>
     <div class="d-flex indigo-text lady-lips-gradient flex-column justify-content-center align-items-center h-100">
-      <h1>¡Bienvenida Crochetera!</h1>
+      <h1 class="titulo1">¡Bienvenida Crochetera!</h1>
       <p class="my-2">
         Te invito a formar parte del mundo <strong class="blue-text titulo font-weight-bold">Algo de Mí!</strong>
       </p> 
@@ -23,9 +23,17 @@
   </div>
 </div>
 
-<hr class="mt-2 mx-4">
-<hr class="mt-2 mx-5">
-  <h2 class="ml-3 text-danger font-weight-bold">Últimas Novedades!</h2>
+<hr class="mt-3 mx-4">
+<h1 class="d-flex justify-content-center my-4 animated pulse slow delay-1s link-hover rgba-yellow-light mx-5">
+    <a class="slide-right slide-left text-reset" routerLink="/shop">
+      <i class="far fa-hand-point-right"></i> ¡VER PRODUCTOS! <i class="far fa-hand-point-left"></i>
+    </a>
+</h1>
+
+<hr class="mb-3 mx-4">
+
+
+<h2 class="ml-3 text-danger font-weight-bold">Últimas Novedades! <i class="far fa-heart"></i></h2>
   <div class="row mx-0">
     <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" *ngFor="let producto of productos">
       <mdb-card class="my-3 cardDetalles">
